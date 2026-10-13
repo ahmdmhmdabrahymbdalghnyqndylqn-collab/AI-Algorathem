@@ -1,0 +1,99 @@
+/* General Page Style */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Application Card */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+
+    width: 100%;
+    max-width: 420px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Title */
+h1 {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+/* Description */
+p {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Question Labels */
+label {
+    display: block;
+    text-align: left;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    font-weight: bold;
+    color: #334155;
+}
+
+/* Yes / No Selection */
+select {
+    width: 100%;
+    padding: 14px;
+
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+
+    font-size: 16px;
+    background: #f8fafc;
+}
+
+/* Prediction Button */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+
+    background: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Prediction Result */
+#result {
+    margin-top: 25px;
+    font-size: 24px;
+    color: #16a34a;
+}
