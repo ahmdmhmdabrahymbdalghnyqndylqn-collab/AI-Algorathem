@@ -1,99 +1,450 @@
-/* General Page Style */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-
-    font-family: Arial, sans-serif;
-
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Inter', sans-serif;
+  background: #f5f8ff;
+  color: #101d42;
 }
 
-/* Main Application Card */
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-
-    width: 100%;
-    max-width: 420px;
-
-    text-align: center;
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+button, select {
+  font: inherit;
 }
 
-/* Main Title */
-h1 {
-    color: #1e3a8a;
-    font-size: 26px;
-    margin-bottom: 12px;
-}
-
-/* Description */
-p {
-    color: #64748b;
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-/* Question Labels */
-label {
-    display: block;
-    text-align: left;
-
-    margin-top: 20px;
-    margin-bottom: 8px;
-
-    font-weight: bold;
-    color: #334155;
-}
-
-/* Yes / No Selection */
-select {
-    width: 100%;
-    padding: 14px;
-
-    border: 2px solid #cbd5e1;
-    border-radius: 10px;
-
-    font-size: 16px;
-    background: #f8fafc;
-}
-
-/* Prediction Button */
 button {
+  cursor: pointer;
+}
+
+.navbar {
+  height: 78px;
+  padding: 0 8%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px #182e6510;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo b, .hero h1 span {
+  color: #1769f4;
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.desktop-nav button {
+  border: none;
+  background: #eef4ff;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #1457bd;
+}
+
+.page {
+  min-height: calc(100vh - 78px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hero {
+  min-height: 550px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  background: linear-gradient(120deg, #edf6ff, #e5eaff, #f8faff);
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.tag {
+  display: inline-block;
+  background: #dceaff;
+  color: #1769f4;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1.13;
+  letter-spacing: -2px;
+  margin: 25px 0;
+  font-weight: 900;
+}
+
+.hero p {
+  color: #61708e;
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.primary-btn {
+  border: none;
+  background: linear-gradient(110deg, #0668f9, #6252f4);
+  color: white;
+  padding: 18px 32px;
+  border-radius: 15px;
+  font-weight: 800;
+  box-shadow: 0 12px 28px #2466ed40;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px #2466ed60;
+}
+
+.hero-art {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  flex-shrink: 0;
+}
+
+.art-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a9d9ff, #a6a2ff);
+  display: grid;
+  place-items: center;
+  font-size: 145px;
+  box-shadow: 0 25px 60px #5179ce35;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 12px 35px #244b8e25;
+}
+
+.card-one {
+  left: -40px;
+  bottom: 45px;
+}
+
+.card-two {
+  right: -25px;
+  top: 40px;
+}
+
+.features {
+  max-width: 1150px;
+  margin: -40px auto 60px;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  position: relative;
+}
+
+.feature-card {
+  background: white;
+  padding: 35px 25px;
+  text-align: center;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px #244b8e12;
+}
+
+.feature-icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+}
+
+.feature-card p, .steps p {
+  color: #73809b;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.how-section {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 20px 25px;
+  text-align: center;
+}
+
+.how-section h2 {
+  font-size: 34px;
+  margin: 20px 0 40px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.steps > div {
+  background: white;
+  padding: 35px 20px;
+  border-radius: 20px;
+}
+
+.steps strong {
+  display: block;
+  font-size: 36px;
+  color: #1769f4;
+  margin-bottom: 15px;
+}
+
+.steps h3 {
+  margin-bottom: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #8290a8;
+  font-size: 13px;
+}
+
+.predict-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #102a75, #3158ce, #6254f5);
+  color: white;
+  padding: 75px 8% 115px;
+}
+
+.predict-banner .tag {
+  background: #ffffff24;
+  color: white;
+}
+
+.predict-banner h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  margin: 20px 0;
+}
+
+.predict-banner p {
+  color: #dce7ff;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+.banner-icon {
+  position: absolute;
+  right: 12%;
+  top: 65px;
+  font-size: 120px;
+}
+
+.prediction-container {
+  max-width: 700px;
+  margin: -65px auto 70px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.form-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 18px 50px #122f6b20;
+}
+
+.form-card h2 {
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  color: #7886a0;
+  margin-bottom: 35px;
+}
+
+.form-card label {
+  display: block;
+  font-weight: 700;
+  margin: 22px 0 12px;
+}
+
+.form-card select {
+  width: 100%;
+  padding: 17px;
+  border: 1px solid #d7e2f5;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #14264c;
+  outline: none;
+}
+
+.form-card select:focus {
+  border-color: #1769f4;
+}
+
+.full-btn {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.result-box {
+  background: #e0f9ed;
+  color: #087a43;
+  padding: 30px;
+  margin-top: 25px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.result-box.fail {
+  background: #fff0ee;
+  color: #b72b3b;
+}
+
+.result-box p {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.result-box h2 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.disclaimer {
+  color: #8390a6;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: 80px;
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 55px 25px 85px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .hero-art {
+    width: 240px;
+    height: 240px;
+    margin-top: 20px;
+  }
+
+  .art-circle {
+    font-size: 110px;
+  }
+
+  .features, .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    margin-top: -35px;
+  }
+
+  .predict-banner {
+    padding: 55px 25px 115px;
+  }
+
+  .banner-icon {
+    display: none;
+  }
+
+  .form-card {
+    padding: 28px 22px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 15px;
-    margin-top: 30px;
+    padding: 10px;
+    background: #0d1d46;
+    gap: 10px;
+    z-index: 100;
+  }
 
-    background: #2563eb;
-    color: white;
-
+  .bottom-nav button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px;
+    background: transparent;
+    color: #aab9dc;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
+    font-weight: 700;
+  }
 
-    font-size: 17px;
-    font-weight: bold;
+  .bottom-nav button.active {
+    background: #1769f4;
+    color: white;
+  }
 
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-/* Prediction Result */
-#result {
-    margin-top: 25px;
-    font-size: 24px;
-    color: #16a34a;
+  .bottom-nav button span {
+    font-size: 23px;
+  }
 }

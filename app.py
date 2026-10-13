@@ -19,6 +19,13 @@ for student in students:
 model = DecisionTreeClassifier(criterion="entropy", random_state=42)
 model.fit(x, y)
 
+@app.route("/style.css")
+def serve_css():
+    return send_from_directory("frontend", "style.css")
+
+@app.route("/script.js")
+def serve_js():
+    return send_from_directory("frontend", "script.js")
 
 @app.route("/")
 def home():

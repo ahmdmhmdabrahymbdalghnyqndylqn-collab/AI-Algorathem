@@ -1,45 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Student Success Predictor</title>
-
-    <link rel="stylesheet" href="/frontend/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Success Predictor</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
 
-    <div class="container">
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-icon">🎓</span>
+    <span>Student <b>Success</b></span>
+  </div>
+  <nav class="desktop-nav">
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('predict')">Predict</button>
+  </nav>
+</header>
 
-        <h1>Student Success Predictor</h1>
+<main>
+  <section id="homePage" class="page">
 
-        <p>Predict your result using Artificial Intelligence</p>
-
-        <label>Did you study?</label>
-        <select id="studied">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-
-        <label>Did you complete the project?</label>
-        <select id="project">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-
-        <button id="predictBtn">Predict Result</button>
-
-        <h2 id="result"></h2>
-
+    <div class="hero">
+      <div class="hero-content">
+        <span class="tag">✦ AI-Powered Student Insights</span>
+        <h1>Predict Your <span>Academic Success.</span></h1>
+        <p>Discover how Artificial Intelligence can predict student outcomes using study habits and project completion.</p>
+        <button class="primary-btn" onclick="showPage('predict')">
+          Start Prediction →
+        </button>
+      </div>
+      <div class="hero-art">
+        <div class="art-circle">👨‍🎓</div>
+        <div class="floating-card card-one">📈 Smart Prediction</div>
+        <div class="floating-card card-two">✨ Powered by AI</div>
+      </div>
     </div>
 
-    <link rel="stylesheet" href="/frontend/style.css">
-    <script src="/frontend/script.js?v=2"></script>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>AI Technology</h3>
+        <p>Powered by a Decision Tree machine learning model.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Simple Prediction</h3>
+        <p>Answer two questions to get your result.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast & Easy</h3>
+        <p>Get an instant prediction in seconds.</p>
+      </div>
+    </div>
 
-</body>
-</html>
+    <section class="how-section">
+      <span class="tag">HOW IT WORKS</span>
+      <h2>Three Simple Steps</h2>
+      <div class="steps">
+        <div><strong>01</strong><h3>Enter Details</h3><p>Tell us if you studied and completed your project.</p></div>
+        <div><strong>02</strong><h3>AI Analysis</h3><p>Our Decision Tree analyzes your answers.</p></div>
+        <div><strong>03</strong><h3>View Result</h3><p>See the predicted Pass or Fail result.</p></div>
+      </div>
+    </section>
+
+    <footer>© 2026 Student Success Predictor · Built with AI</footer>
+  </section>
+
+  <section id="predictPage" class="page hidden">
+    <div class="predict-banner">
+      <span class="tag">SMART PREDICTION</span>
+      <h1>Predict Your Result</h1>
+      <p>Answer two questions and let our AI model analyze your information.</p>
+      <div class="banner-icon">📋</div>
+    </div>
+
+    <div class="prediction-container">
+      <div class="form-card">
+        <h2>🎓 Student Information</h2>
+        <p class="form-subtitle">Please answer the following questions.</p>
+
+        <label for="studied">📚 Did you study?</label>
+        <select id="studied">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="project">💻 Did you complete the project?</label>
+        <select id="project">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <button id="predictBtn" class="primary-btn full-btn">
+          ✨ Predict Result
+        </button>
+      </div>
+
+      <div id="resultBox" class="result-box hidden">
+        <p>YOUR PREDICTION</p>
+        <h2 id="result"></h2>
+      </div>
+
+      <p class="disclaimer">Educational demonstration only. Results are based on a small sample dataset.</p>
+    </div>
+  </section>
+</main>
+
+<div class="bottom-nav">
+  <button id="homeNav" class="active" onclick="showPage('home')">
+    <span>⌂</span>Home
+  </button>
+  <button id="predictNav" onclick="showPage('predict')">
+    <span>◈</span>Predict
+  </button>
+</div>
+
+<script src="/script.js"></script>
 </body>
 </html>
